@@ -1,7 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/sequelize';
-// import { BadRequestException } from '@nestjs/common';
-// import { Op } from 'sequelize';
 import { ArticlesService } from './articles.service';
 import { Article } from './article.entity';
 import axios, { AxiosInstance } from 'axios';
