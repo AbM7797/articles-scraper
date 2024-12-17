@@ -1,0 +1,4 @@
+apiVersion: v2
+name: articles-scraper
+description: A Helm chart for Articles Scraper NestJS application
+version: 0.1.0

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: articles-scraper-config
+  labels:
+    app: articles-scraper
+data:
+  DB_PORT: "{{ .Values.env.DB_PORT }}"
+  DB_HOST: "{{ .Values.env.DB_HOST }}"
+  DB_USERNAME: "{{ .Values.env.DB_USERNAME }}"
+  DB_DATABASE: "{{ .Values.env.DB_DATABASE }}"

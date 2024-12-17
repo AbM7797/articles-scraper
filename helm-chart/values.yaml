@@ -1,0 +1,28 @@
+replicaCount: 2
+
+image:
+  repository: articles-scraper
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# MySQL Configuration
+mysql:
+  persistence:
+    enabled: true
+    size: 5Gi
+
+# PhpMyAdmin Configuration
+phpmyadmin:
+  enabled: true
+  port: 8080
+
+service:
+  type: ClusterIP
+  port: 3000
+
+env:
+  DB_PORT: 3306
+  DB_HOST: mysql.default.svc.cluster.local
+  DB_USERNAME: root
+  DB_PASSWORD: rootpassword
+  DB_DATABASE: articles_scraper
