@@ -1,14 +1,6 @@
-import {
-  Controller,
-  Post,
-  Get,
-  HttpCode,
-  Query,
-  DefaultValuePipe,
-  ParseIntPipe,
-} from '@nestjs/common';
+import { Controller, Post, Get, HttpCode, Query } from '@nestjs/common';
 import { ArticlesService } from './articles.service';
-import { Article } from './article.entity';
+import { GetArticlesDto } from './dto/get-articles.dto';
 
 @Controller('articles')
 export class ArticlesController {
@@ -22,14 +14,9 @@ export class ArticlesController {
   }
 
   @Get()
-  async getArticles(
-    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page?: number,
-    @Query('pageSize', new DefaultValuePipe(10), ParseIntPipe)
-    pageSize?: number,
-    @Query('days') days?: number,
-    @Query('sortBy') sortBy?: keyof Article,
-    @Query('order') order?: 'ASC' | 'DESC',
-  ) {
+  async getArticles(@Query() query: GetArticlesDto) {
+    const { page, pageSize, days, sortBy, order } = query;
+
     return this.articlesService.findArticlesPaginated(
       page,
       pageSize,
