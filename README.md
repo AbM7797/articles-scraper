@@ -1,4 +1,3 @@
-```markdown
 # README - Articles Scraper
 
 Ce document décrit comment lancer l'application "Articles Scraper" en local à l'aide de Docker Compose et comment la déployer sur un cluster Minikube.
@@ -153,4 +152,3 @@ Pour plus d'informations, consultez :
 - [Documentation Docker](https://docs.docker.com/)
 - [Documentation Minikube](https://minikube.sigs.k8s.io/docs/)
 - [Documentation Helm](https://helm.sh/docs/)
-```
